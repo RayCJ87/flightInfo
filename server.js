@@ -26,9 +26,9 @@ app.get("/home", (req, res)=> {
 })
 
 app.post("/result", (req, res)=> {
-    const airName = req.body.flightC;
+    const airName = req.body.flightC.toUpperCase();
     const flightNumber = req.body.flightNum;
-    fetch(`http://aviation-edge.com/v2/public/flights?key=${process.env.API_KEY2}&airlineIata=W8`)
+    fetch(`http://aviation-edge.com/v2/public/flights?key=${process.env.API_KEY2}&flightIata=${airName}${flightNumber}`)
     .then(res => res.json())
     .then(json => profile = json)
     .then(profile => {
