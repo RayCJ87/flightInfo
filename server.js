@@ -25,18 +25,15 @@ app.get("/home", (req, res)=> {
     res.render("index.ejs");
 })
 
-app.get("/result", (req, res)=> {
+app.post("/result", (req, res)=> {
     const airName = req.body.flightC;
     const flightNumber = req.body.flightNum;
-    console.log(req.body);
-    console.log(`the airline is: ${airName}`)
-    console.log(`the flightnumber is: ${flightNumber}`)
-    fetch(`http://aviation-edge.com/v2/public/timetable?key=${process.env.API_KEY2}&iataCode=YYZ&type=departure`)
+    fetch(`http://aviation-edge.com/v2/public/flights?key=${process.env.API_KEY2}&airlineIata=W8`)
     .then(res => res.json())
     .then(json => profile = json)
-
-    res.render("result.ejs")
-
+    .then(profile => {
+        res.send(profile);
+    })
 })
 
 app.listen(PORT, () => {
