@@ -12,7 +12,26 @@
     </head>
 
     <body>
-        
+        <div>
+            <span> Departure:  <%= flightData.departure.iataCode%></span></br>
+            <span> Arrival:  <%= flightData.arrival.iataCode%></span></br>
+            <span> Status:  <%= flightData.status%></span>
+        </div>
+
+        <div>
+            <table>
+                <tr>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Altitude</th>
+                </tr>
+                <tr>
+                    <th><%= flightData.geography.latutude%></th>
+                    <th><%= flightData.geography.longitude%></th>
+                    <th><%= flightData.geography.altitude%></th>
+                </tr>
+            </table>
+        </div>
     </body>
 
 </html>

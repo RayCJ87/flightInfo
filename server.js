@@ -14,7 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 let profile;
-
+let timeInfo;
+let obj;
 
 app.get("/", (req, res) =>{
 
@@ -28,11 +29,15 @@ app.get("/home", (req, res)=> {
 app.post("/result", (req, res)=> {
     const airName = req.body.flightC.toUpperCase();
     const flightNumber = req.body.flightNum;
+    console.log(airName)
+    console.log(flightNumber)
     fetch(`http://aviation-edge.com/v2/public/flights?key=${process.env.API_KEY2}&flightIata=${airName}${flightNumber}`)
     .then(res => res.json())
     .then(json => profile = json)
-    .then(profile => {
-        res.send(profile);
+    .then(profile=>{
+        res.render('result.ejs', { flightData: profile[0] });
+        // res.send(profile)
+        console.log(profile);
     })
 })
 
