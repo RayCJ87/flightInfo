@@ -17,6 +17,8 @@
             }
         </style>
 
+
+
     </head>
 
     <body>
@@ -41,26 +43,19 @@
             </table>
         </div>
 
-        <div id="map"></div>
-        <script>
-            function initMap(){
-                let thePlane = {lat: parseInt(document.getElementById('flat').innerHTML), lng: parseInt(document.getElementById('flong').innerHTML) }
-                // The map is centered at the plane
-                console.log(thePlane);
-                console.log(document.getElementById('flat').innerHTML)
-                console.log(typeof(document.getElementById('flat').innerHTML));
-                let map = new google.maps.Map(
-                    document.getElementById('map'), {zoom: 4, center: thePlane}
-                );
-                // the marker is positioned at the plane
-                let marker = new google.maps.Marker({position: thePlane, map: map});
-            }
 
-        </script>
 
-        <!-- load API from the URL -->
-        <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbiqvTyWa2FXPnu9EetqBHqHAyZRlv_j0&callback=initMap"  type="text/javascript">
+        <iframe 
+            id ="mapFrame" width="600" height="450" frameborder="0" style="border: 0"
+            src="">
+        </iframe>
+            
+        <script type="text/javascript">
+            let thePlane = {lat: parseFloat(document.getElementById('flat').innerHTML), lng: parseFloat(document.getElementById('flong').innerHTML) }
+            let ifr = document.createElement("iframe");
+            var addre =  `https://www.google.com/maps/embed/v1/place?key=AIzaSyDbiqvTyWa2FXPnu9EetqBHqHAyZRlv_j0&q=${thePlane.lat},${thePlane.lng}&zoom=5`;
+            document.getElementById("mapFrame").src = addre;
+            console.log(thePlane)
         </script>
 
     </body>

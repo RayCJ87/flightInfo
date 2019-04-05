@@ -31,7 +31,7 @@ app.post("/result", (req, res)=> {
     const flightNumber = req.body.flightNum;
     console.log(airName)
     console.log(flightNumber)
-    fetch(`http://aviation-edge.com/v2/public/flights?key=${process.env.API_KEY2}&flightIata=${airName}${flightNumber}`)
+    fetch(`http://aviation-edge.com/v2/public/flights?key=${process.env.API_KEY3}&flightIata=${airName}${flightNumber}`)
     .then(res => res.json())
     .then(json => profile = json)
     .then(profile=>{
