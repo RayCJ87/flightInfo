@@ -52,7 +52,6 @@
             
         <script type="text/javascript">
             let thePlane = {lat: parseFloat(document.getElementById('flat').innerHTML), lng: parseFloat(document.getElementById('flong').innerHTML) }
-            let ifr = document.createElement("iframe");
             var addre =  `https://www.google.com/maps/embed/v1/place?key=AIzaSyDbiqvTyWa2FXPnu9EetqBHqHAyZRlv_j0&q=${thePlane.lat},${thePlane.lng}&zoom=5`;
             document.getElementById("mapFrame").src = addre;
             console.log(thePlane)
