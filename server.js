@@ -2,8 +2,10 @@ const express = require("express");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const app = express();
+const pg = require("pg");
 const PORT = 3000;
 
+const connectionString = process.env.DB_URL;
 const fetch = require("node-fetch");
 
 dotenv.config();
