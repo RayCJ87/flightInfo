@@ -10,22 +10,10 @@
         <!-- CSS stylesheets -->
         <!-- <link rel="stylesheet" href="/styles/index.css" type="text/css" /> -->
 
-        <style>
-            #map{
-                height: 400px;
-                width: 100%;
-            }
-        </style>
-
-
     </head>
 
     <body>
-        <div>
-            <span> Departure:  <%= flightData.departure.iataCode%></span></br>
-            <span> Arrival:  <%= flightData.arrival.iataCode%></span></br>
-            <span> Status:  <%= flightData.status%></span>
-        </div>
+
 
         <div>
             <table id="flightInfo">
@@ -47,17 +35,6 @@
 
 
 
-        <iframe 
-            id ="mapFrame" width="600" height="450" frameborder="0" style="border: 0"
-            src="">
-        </iframe>
-            
-        <script type="text/javascript">
-            let thePlane = {lat: parseFloat(document.getElementById('flat').innerHTML), lng: parseFloat(document.getElementById('flong').innerHTML) }
-            var addre =  `https://www.google.com/maps/embed/v1/place?key=AIzaSyDbiqvTyWa2FXPnu9EetqBHqHAyZRlv_j0&q=${thePlane.lat},${thePlane.lng}&zoom=5`;
-            document.getElementById("mapFrame").src = addre;
-            console.log(thePlane)
-        </script>
 
     </body>
 
