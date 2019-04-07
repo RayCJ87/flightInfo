@@ -7,6 +7,8 @@ const PORT = 3000;
 
 const connectionString = process.env.DB_URL;
 const fetch = require("node-fetch");
+const client = new pg.Client(connectionString);
+
 
 dotenv.config();
 
