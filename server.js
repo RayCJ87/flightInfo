@@ -32,15 +32,13 @@ app.get("/home", (req, res)=> {
 
 app.post("/airline/:arrName", (req, res)=> {
     const airName = req.body.flightC.toUpperCase();
-    const flightNumber = req.body.flightNum;
     console.log(airName)
-    console.log(flightNumber)
     fetch(`http://aviation-edge.com/v2/public/flights?key=${process.env.API_KEY3}&airlineIata=${airName}`)
     .then(res => res.json())
     .then(json => profile = json)
     .then(profile=>{
         res.render('airline.ejs', { flightData: profile });
-        // res.send(profile)
+        res.send(profile)
         console.log(profile);
     })
 })

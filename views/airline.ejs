@@ -18,17 +18,30 @@
         <div>
             <table id="flightInfo">
                 <tr>
-                    <th>Flight Info</th>
+                    <th>Flight Number</th>
+                    <th>Departure</th>
+                    <th>Arrival</th>
                     <th>Latitude</th>
                     <th>Longitude</th>
                     <th>Altitude</th>
+                    <th>Speed</th>
                     
                 </tr>
                 <tr>
-                    <th><%= flightData.flight.iataNumber%></th>
-                    <th id='flat'><%= flightData.geography.latitude%></th>
-                    <th id='flong'><%= flightData.geography.longitude%></th>
-                    <th><%= flightData.geography.altitude%></th>
+                   <% flightData.forEach(function(item) { %>
+                    <tr>
+                        <form>
+                                <td><%= item.flight.iataNumber %></td>
+                                <td><%= item.departure.iataCode %></td>
+                                <td><%= item.arrival.iataCode %></td>
+                                <td><%= item.geography.latitude %></td>
+                                <td><%= item.geography.longitude %></td>
+                                <td><%= item.geography.altitude %></td>
+                                <td><%= item.speed.horizontal %></td>
+                        </form>
+
+                    </tr>
+                    <% });%>
                 </tr>
             </table>
         </div>
