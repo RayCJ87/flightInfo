@@ -44,18 +44,25 @@ app.post("/airline/:arrName", (req, res)=> {
 })
 
 app.post("/result", (req, res)=> {
-    const airName = req.body.flightC.toUpperCase();
-    const flightNumber = req.body.flightNum;
-    console.log(airName)
-    console.log(flightNumber)
-    fetch(`http://aviation-edge.com/v2/public/flights?key=${process.env.API_KEY3}&flightIata=${airName}${flightNumber}`)
-    .then(res => res.json())
-    .then(json => profile = json)
-    .then(profile=>{
-        res.render('result.ejs', { flightData: profile[0] });
-        // res.send(profile)
-        console.log(profile);
-    })
+    // const flightName = req.body.flightNum;
+    // const flightLatitude = req.body.flightLatitude;
+    // console.log(flightNum)
+    // console.log(flightLatitude);
+    console.log(req.body)
+
+    
+    // const airName = req.body.flightC.toUpperCase();
+    // const flightNumber = req.body.flightNum;
+    // console.log(airName)
+    // console.log(flightNumber)
+    // fetch(`http://aviation-edge.com/v2/public/flights?key=${process.env.API_KEY3}&flightIata=${airName}${flightNumber}`)
+    // .then(res => res.json())
+    // .then(json => profile = json)
+    // .then(profile=>{
+    //     res.render('result.ejs', { flightData: profile[0] });
+    //     // res.send(profile)
+    //     console.log(profile);
+    // })
 })
 
 app.listen(PORT, () => {

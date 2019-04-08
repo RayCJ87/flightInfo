@@ -30,7 +30,7 @@
                 <tr>
                    <% flightData.forEach(function(item) { %>
                     <tr>
-                        <form>
+                        <form method="POST" action="/result">
                                 <td><%= item.flight.iataNumber %></td>
                                 <td><%= item.departure.iataCode %></td>
                                 <td><%= item.arrival.iataCode %></td>
@@ -38,8 +38,17 @@
                                 <td><%= item.geography.longitude %></td>
                                 <td><%= item.geography.altitude %></td>
                                 <td><%= item.speed.horizontal %></td>
+                                <td>
+                                    <input id="theNumber" type="hidden" value="" name="flightNum"> 
+                                    <input id="theLat" type="hidden"  value= "" name="flightLat" >
+                                    <button type="submit" class="btn btn-primary pink-background">Submit</button>
+                                   
+                                    <%  console.log(item.flight.iataNumber)%>
+                                    <%    document.getElementById('theNumber').value = item.flight.iataNumber;%>
+                                    <%   document.getElementById('theLat').value = item.geography.latitude;%>
+                                    
+                                </td>
                         </form>
-
                     </tr>
                     <% });%>
                 </tr>
