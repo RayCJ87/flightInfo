@@ -50,8 +50,8 @@ app.post("/result", (req, res)=> {
     console.log(flightLatitude);
     // console.log(req.body)
     profile = [flightName, flightLatitude];
-
-    res.render('result.ejs', {flightData: profile})
+    let wwww = window.open("http://nba.com", 'bball', 'height=200, width=200')
+    // res.render('result.ejs', {flightData: profile})
 
     // const airName = req.body.flightC.toUpperCase();
     // const flightNumber = req.body.flightNum;

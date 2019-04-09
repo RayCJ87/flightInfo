@@ -30,24 +30,33 @@
                 <tr>
                    <% flightData.forEach(function(item) { %>
                     <tr>
-                        <form method="POST" action="/result">
+                        <!-- <form method="POST" action="/result"> -->
                                 <td><%= item.flight.iataNumber %></td>
                                 <td><%= item.departure.iataCode %></td>
-                                <td><%= item.arrival.iataCode %></td>
-                                <td><%= item.geography.latitude %></td>
-                                <td><%= item.geography.longitude %></td>
+                                <td id="iaCode"><%= item.arrival.iataCode %></td>
+                                <td class='tLat'><%= item.geography.latitude %></td>
+                                <td id='tLon'><%= item.geography.longitude %></td>
                                 <td><%= item.geography.altitude %></td>
                                 <td><%= item.speed.horizontal %></td>
                                 <td>
+                                        <script>
+                                                function getMap(){
+                                                    let latt = $('.btn btn-primary').closest('.tLat').text();
+                                                    console.log("The latt", latt);
+                                                    // let mapUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyDbiqvTyWa2FXPnu9EetqBHqHAyZRlv_j0&q=${item.geography.latitude},${item.geography.longitude}&zoom=5`;
+                                                    // window.open(mapUrl, 'theMap', 'height=200, width=200');
+                                                }
+                                            </script>
                                     <input id="theNumber" type="hidden" value="<%= item.flight.iataNumber %>" name="flightNum"> 
                                     <input id="theLat" type="hidden"  value= "<%= item.geography.latitude %>" name="flightLat" >
                                     <input id="theLong" type="hidden"  value= "<%= item.geography.longitude %>" name="flightLong" >
                                     <input id="theAlti" type="hidden"  value= "<%= item.geography.altitude %>" name="flightAlti" >
                                     <input id="theSpeed" type="hidden"  value= "<%= item.speed.horizontal %>" name="flightSpeed" >
                                     <input id="theArr" type="hidden"  value= "<%= item.arrival.iataCode %>" name="flightArr" >
-                                    <button type="submit" class="btn btn-primary pink-background">Submit</button>
+                                    <button type="button" class="btn btn-primary" onClick="getMap()">Show</button>
+
                                 </td>
-                        </form>
+                        <!-- </form> -->
                     </tr>
                     <% });%>
                 </tr>
