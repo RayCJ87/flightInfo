@@ -7,7 +7,7 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
         <!-- Bootstrap CSS -->
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
         <!-- jquery / app.js -->
@@ -34,29 +34,29 @@
                     
                 </tr>
                 <!-- <tr> -->
-                   <% flightData.forEach(function(item) { %>
-                    <tr class="infoContainer">
-                        <!-- <form method="POST" action="/result"> -->
-                                <td><%= item.flight.iataNumber %></td>
-                                <td><%= item.departure.iataCode %></td>
-                                <td id="iaCode"><%= item.arrival.iataCode %></td>
-                                <td class='tLat'><%= item.geography.latitude %></td>
-                                <td id='tLon'><%= item.geography.longitude %></td>
-                                <td><%= item.geography.altitude %></td>
-                                <td><%= item.speed.horizontal %></td>
-                                <td>
+                <% flightData.forEach(function(item) { %>
+                <tr class="infoContainer">
+                    <!-- <form method="POST" action="/result"> -->
+                            <td class="flightCode"><%= item.flight.iataNumber %></td>
+                            <td class="depCode"><%= item.departure.iataCode %></td>
+                            <td class="arrCode"><%= item.arrival.iataCode %></td>
+                            <td class="latCode"><%= item.geography.latitude %></td>
+                            <td class="longCode"><%= item.geography.longitude %></td>
+                            <td><%= item.geography.altitude %></td>
+                            <td><%= item.speed.horizontal %></td>
+                            <td>
 
-                                    <input id="theNumber" type="hidden" value="<%= item.flight.iataNumber %>" name="flightNum"> 
-                                    <input id="theLat" type="hidden"  value= "<%= item.geography.latitude %>" name="flightLat" >
-                                    <input id="theLong" type="hidden"  value= "<%= item.geography.longitude %>" name="flightLong" >
-                                    <input id="theAlti" type="hidden"  value= "<%= item.geography.altitude %>" name="flightAlti" >
-                                    <input id="theSpeed" type="hidden"  value= "<%= item.speed.horizontal %>" name="flightSpeed" >
-                                    <input id="theArr" type="hidden"  value= "<%= item.arrival.iataCode %>" name="flightArr" >
-                                    <button type="button" class="btn btn-primary" id="showButton">Show</button>
-                                </td>
-                        <!-- </form> -->
-                    </tr>
-                    <% });%>
+                                <input id="theNumber" type="hidden" value="<%= item.flight.iataNumber %>" name="flightNum"> 
+                                <input id="theLat" type="hidden"  value= "<%= item.geography.latitude %>" name="flightLat" >
+                                <input id="theLong" type="hidden"  value= "<%= item.geography.longitude %>" name="flightLong" >
+                                <input id="theAlti" type="hidden"  value= "<%= item.geography.altitude %>" name="flightAlti" >
+                                <input id="theSpeed" type="hidden"  value= "<%= item.speed.horizontal %>" name="flightSpeed" >
+                                <input id="theArr" type="hidden"  value= "<%= item.arrival.iataCode %>" name="flightArr" >
+                                <button type="button" class="btn btn-primary" id="showButton">Show</button>
+                            </td>
+                    <!-- </form> -->
+                </tr>
+                <% });%>
                 <!-- </tr> -->
             </table>
         </div>

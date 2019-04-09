@@ -13,7 +13,7 @@ const client = new pg.Client(connectionString);
 dotenv.config();
 
 app.set("view engine", "ejs")
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
@@ -50,7 +50,6 @@ app.post("/result", (req, res)=> {
     console.log(flightLatitude);
     // console.log(req.body)
     profile = [flightName, flightLatitude];
-    let wwww = window.open("http://nba.com", 'bball', 'height=200, width=200')
     // res.render('result.ejs', {flightData: profile})
 
     // const airName = req.body.flightC.toUpperCase();
