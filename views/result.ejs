@@ -22,9 +22,9 @@
 
     <body>
         <div>
-            <span> Departure:  <%= flightData.departure.iataCode%></span></br>
-            <span> Arrival:  <%= flightData.arrival.iataCode%></span></br>
-            <span> Status:  <%= flightData.status%></span>
+            <span> Departure:  <%= flightData%></span></br>
+            <span> Arrival:  <%= flightData%></span></br>
+            <span> Status:  <%= flightData%></span>
         </div>
 
         <div>
@@ -37,10 +37,10 @@
                     
                 </tr>
                 <tr>
-                    <th><%= flightData.flight.iataNumber%></th>
-                    <th id='flat'><%= flightData.geography.latitude%></th>
-                    <th id='flong'><%= flightData.geography.longitude%></th>
-                    <th><%= flightData.geography.altitude%></th>
+                    <!-- <th><%= flightData.flight.iataNumber%></th> -->
+                    <th id='flat'><%= flightData[0]%></th>
+                    <th id='flong'><%= flightData[1]%></th>
+                    <!-- <th><%= flightData.geography.altitude%></th> -->
                 </tr>
             </table>
         </div>

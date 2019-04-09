@@ -39,14 +39,13 @@
                                 <td><%= item.geography.altitude %></td>
                                 <td><%= item.speed.horizontal %></td>
                                 <td>
-                                    <input id="theNumber" type="hidden" value="" name="flightNum"> 
-                                    <input id="theLat" type="hidden"  value= "" name="flightLat" >
+                                    <input id="theNumber" type="hidden" value="<%= item.flight.iataNumber %>" name="flightNum"> 
+                                    <input id="theLat" type="hidden"  value= "<%= item.geography.latitude %>" name="flightLat" >
+                                    <input id="theLong" type="hidden"  value= "<%= item.geography.longitude %>" name="flightLong" >
+                                    <input id="theAlti" type="hidden"  value= "<%= item.geography.altitude %>" name="flightAlti" >
+                                    <input id="theSpeed" type="hidden"  value= "<%= item.speed.horizontal %>" name="flightSpeed" >
+                                    <input id="theArr" type="hidden"  value= "<%= item.arrival.iataCode %>" name="flightArr" >
                                     <button type="submit" class="btn btn-primary pink-background">Submit</button>
-                                   
-                                    <%  console.log(item.flight.iataNumber)%>
-                                    <%    document.getElementById('theNumber').value = item.flight.iataNumber;%>
-                                    <%   document.getElementById('theLat').value = item.geography.latitude;%>
-                                    
                                 </td>
                         </form>
                     </tr>

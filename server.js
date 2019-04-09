@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 
 let profile;
 let timeInfo;
-let obj;
+let currentAirline;
 
 app.get("/", (req, res) =>{
 
@@ -37,20 +37,22 @@ app.post("/airline/:arrName", (req, res)=> {
     .then(res => res.json())
     .then(json => profile = json)
     .then(profile=>{
+        currentAirline = profile;
         res.render('airline.ejs', { flightData: profile });
-        res.send(profile)
-        console.log(profile);
+        // console.log(profile);
     })
 })
 
 app.post("/result", (req, res)=> {
-    // const flightName = req.body.flightNum;
-    // const flightLatitude = req.body.flightLatitude;
-    // console.log(flightNum)
-    // console.log(flightLatitude);
-    console.log(req.body)
+    const flightName = req.body.flightNum;
+    const flightLatitude = req.body.flightLat;
+    console.log(flightName)
+    console.log(flightLatitude);
+    // console.log(req.body)
+    profile = [flightName, flightLatitude];
 
-    
+    res.render('result.ejs', {flightData: profile})
+
     // const airName = req.body.flightC.toUpperCase();
     // const flightNumber = req.body.flightNum;
     // console.log(airName)
