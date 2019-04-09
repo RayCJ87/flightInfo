@@ -21,18 +21,25 @@
     <body>
 
 
-        <div>
-            <table id="flightInfo">
-                <tr>
-                    <th>Flight Number</th>
-                    <th>Departure</th>
-                    <th>Arrival</th>
-                    <th>Latitude</th>
-                    <th>Longitude</th>
-                    <th>Altitude</th>
-                    <th>Speed</th>
-                    
-                </tr>
+        <div style="overflow-x: auto">
+            <table class="table" id="flightInfo">
+                <thead>
+                        <tr>
+                                <th>Flight Number</th>
+                                <th>Departure</th>
+                                <th>Arrival</th>
+                                <th>Latitude</th>
+                                <th>Longitude</th>
+                                <th>Altitude</th>
+                                <th>Speed</th>
+                                <th>
+                                    <form methon="GET" action="/home">
+                                        <button type="submit" class="btn btn-danger">New Search</button>
+                                    </form>
+                                </th>
+                        </tr>
+                </thead>
+                <tbody>
                 <!-- <tr> -->
                 <% flightData.forEach(function(item) { %>
                 <tr class="infoContainer">
@@ -57,6 +64,7 @@
                     <!-- </form> -->
                 </tr>
                 <% });%>
+                </tbody>
                 <!-- </tr> -->
             </table>
         </div>

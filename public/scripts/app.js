@@ -1,11 +1,12 @@
 function getMap() {
- let theLat = $('#showButton').closest('.infoContainer').children('.theLat').text();
- console.log("The lat: ", theLat);
- console.log("This ggg", $('.theLat').text());
-    
+    let theFlight = $(this).closest('.infoContainer').children('.flightode').text();
+    let theLat = $(this).closest('.infoContainer').children('.latCode').text();
+    let theLong = $(this).closest('.infoContainer').children('.longCode').text();
+    window.open(`https://www.google.com/maps/embed/v1/place?key=AIzaSyDbiqvTyWa2FXPnu9EetqBHqHAyZRlv_j0&q=${theLat},${theLong}&zoom=5`, `${theFlight}`, 'height=400, width=400')
+
 }
 
 $(document).ready(function(){
-    $('#showButton').on('click', getMap);
+    $('.btn-primary').on('click', getMap);
 
 })
