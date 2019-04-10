@@ -7,19 +7,20 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
         <!-- CSS stylesheets -->
         <link rel="stylesheet" href="/styles/index.css" type="text/css" />
     </head>
 
     <body>
-        <h1>Welcome to flightCheck!</h1>
 
         <form method="POST" action="/airline/:arrName" id=sendForm>
-            <div>
-                <span class="airlineName">Code of Airline</span>
+            <div class="welContainer"><span id="welcomeMsg">Welcome to Airline Check</span></div>
+            <div class="mainContainer">
+                <span class="airlineName">Enter code of airline</span></br>
                 <input name="flightC" type="text" class="inputarea">
-                <span class="flightNumber">Flight number</span>
-                <input name="flightNum" type="text"  class="inputarea">
+            </br>
                 <button class="btn btn-primary pink-background" id="searchButton" type="submit">CHECK</button>
             </div>
         </form>

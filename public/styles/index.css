@@ -1,0 +1,41 @@
+
+
+body{
+    background-image: url('/assets/flightHero.jpg');
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+.welContainer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#welcomeMsg {
+    font-size: 30px;
+    background-color: khaki;
+    border-radius: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.mainContainer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.airlineName {
+    font-size: 25px;
+    color: cornsilk
+}
+
+.inputarea {
+    border-radius: 3px;
+}
+
+#searchButton {
+    margin-top: 20px;
+}

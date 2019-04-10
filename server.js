@@ -50,20 +50,7 @@ app.post("/result", (req, res)=> {
     console.log(flightLatitude);
     // console.log(req.body)
     profile = [flightName, flightLatitude];
-    // res.render('result.ejs', {flightData: profile})
 
-    // const airName = req.body.flightC.toUpperCase();
-    // const flightNumber = req.body.flightNum;
-    // console.log(airName)
-    // console.log(flightNumber)
-    // fetch(`http://aviation-edge.com/v2/public/flights?key=${process.env.API_KEY3}&flightIata=${airName}${flightNumber}`)
-    // .then(res => res.json())
-    // .then(json => profile = json)
-    // .then(profile=>{
-    //     res.render('result.ejs', { flightData: profile[0] });
-    //     // res.send(profile)
-    //     console.log(profile);
-    // })
 })
 
 app.listen(PORT, () => {
