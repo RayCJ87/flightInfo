@@ -27,6 +27,10 @@
         <div class="mainContainer" style="overflow-x: auto">
             <table class="table" id="flightInfo">
                 <thead>
+
+                        <form methon="GET" action="/home">
+                            <button type="submit" class="btn btn-danger" id="newSearch">New Search</button>
+                        </form>
                         <tr>
                                 <th class="title">Flight Number</th>
                                 <th class="title">Departure</th>
@@ -35,11 +39,6 @@
                                 <th class="title">Longitude</th>
                                 <th class="title">Altitude</th>
                                 <th class="title">Speed</th>
-                                <th>
-                                    <form methon="GET" action="/home">
-                                        <button type="submit" class="btn btn-danger">New Search</button>
-                                    </form>
-                                </th>
                         </tr>
                 </thead>
                 <tbody>
