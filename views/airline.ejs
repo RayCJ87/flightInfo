@@ -50,9 +50,9 @@
                             <td class="depCode"><%= item.departure.iataCode %></td>
                             <td class="arrCode"><%= item.arrival.iataCode %></td>
                             <td class="latCode"><%= item.geography.latitude %></td>
-                            <td class="longCode"><%= item.geography.longitude %></td>
-                            <td><%= item.geography.altitude %></td>
-                            <td><%= item.speed.horizontal %></td>
+                            <td class="longCode"><%= item.geography.longitude %> </td>
+                            <td><%= item.geography.altitude %> <span>m</span></td>
+                            <td><%= item.speed.horizontal %> <span>kph</span></td>
                             <td>
 
                                 <input id="theNumber" type="hidden" value="<%= item.flight.iataNumber %>" name="flightNum"> 
@@ -61,7 +61,7 @@
                                 <input id="theAlti" type="hidden"  value= "<%= item.geography.altitude %>" name="flightAlti" >
                                 <input id="theSpeed" type="hidden"  value= "<%= item.speed.horizontal %>" name="flightSpeed" >
                                 <input id="theArr" type="hidden"  value= "<%= item.arrival.iataCode %>" name="flightArr" >
-                                <button type="button" class="btn btn-primary" id="showButton">Show</button>
+                                <button type="button" class="btn btn-primary" id="showButton">Show map</button>
                             </td>
                     <!-- </form> -->
                 </tr>
