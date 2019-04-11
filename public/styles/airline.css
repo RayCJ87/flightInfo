@@ -1,0 +1,25 @@
+body{
+    background-image: url('/assets/sky.jpg');
+    height: 400%;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+.mainContainer {
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.table {
+    background-color: azure;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+.title {
+    font-size: 25px;;
+}

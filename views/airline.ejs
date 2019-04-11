@@ -9,30 +9,32 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+        <!-- google font -->
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
         <!-- jquery / app.js -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="/scripts/app.js"></script>
         <!-- CSS stylesheets -->
         <script></script>
-        <!-- <link rel="stylesheet" href="/styles/index.css" type="text/css" /> -->
+        <link rel="stylesheet" href="/styles/airline.css" type="text/css" />
 
     </head>
 
     <body>
 
 
-        <div style="overflow-x: auto">
+        <div class="mainContainer" style="overflow-x: auto">
             <table class="table" id="flightInfo">
                 <thead>
                         <tr>
-                                <th>Flight Number</th>
-                                <th>Departure</th>
-                                <th>Arrival</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
-                                <th>Altitude</th>
-                                <th>Speed</th>
+                                <th class="title">Flight Number</th>
+                                <th class="title">Departure</th>
+                                <th class="title">Arrival</th>
+                                <th class="title">Latitude</th>
+                                <th class="title">Longitude</th>
+                                <th class="title">Altitude</th>
+                                <th class="title">Speed</th>
                                 <th>
                                     <form methon="GET" action="/home">
                                         <button type="submit" class="btn btn-danger">New Search</button>
