@@ -6,7 +6,15 @@ function getMap() {
 
 }
 
+function getPic() {
+    console.log("checking pics....");
+}
+
+
+
+
 $(document).ready(function(){
     $('.btn-primary').on('click', getMap);
-
+    
 })
+
