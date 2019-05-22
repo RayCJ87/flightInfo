@@ -31,7 +31,7 @@ app.get("/home", (req, res)=> {
 })
 
 app.post("/airline/:arrName", (req, res)=> {
-    const airName = req.body.flightC.toUpperCase();
+    const airName = req.body.flightN
     console.log(airName)
     fetch(`http://aviation-edge.com/v2/public/flights?key=${process.env.API_KEY3}&airlineIata=${airName}`)
     .then(res => res.json())
@@ -48,7 +48,6 @@ app.post("/result", (req, res)=> {
     const flightLatitude = req.body.flightLat;
     console.log(flightName)
     console.log(flightLatitude);
-    // console.log(req.body)
     profile = [flightName, flightLatitude];
 
 })
