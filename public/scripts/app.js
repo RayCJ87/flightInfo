@@ -15,6 +15,6 @@ function getPic() {
 
 $(document).ready(function(){
     $('.btn-primary').on('click', getMap);
-    
+
 })
 

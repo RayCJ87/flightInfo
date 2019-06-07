@@ -38,6 +38,8 @@ app.post("/airline/:arrName", (req, res)=> {
     .then(json => profile = json)
     .then(profile=>{
         currentAirline = profile;
+        // res.send(profile);
+        // console.log(profile);
         res.render('airline.ejs', { flightData: profile });
         // console.log(profile);
     })

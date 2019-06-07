@@ -47,7 +47,11 @@
                 <% flightData.forEach(function(item) { %>
                 <tr class="infoContainer">
                     <!-- <form method="POST" action="/result"> -->
-                            <td class="flightCode"><%= item.flight.iataNumber %></td>
+                            <% if (item.flight.iataNumber) { %>
+                                <td class="flightCode"><%= item.flight.iataNumber %></td>
+                            <% } else {%>
+                                <td class="flightCode"><%= item.flight.icaoNumber %></td>
+                            <% } %>
                             <td class="depCode"><%= item.departure.iataCode %></td>
                             <td class="arrCode"><%= item.arrival.iataCode %></td>
                             <td class="latCode"><%= item.geography.latitude %></td>
@@ -55,8 +59,11 @@
                             <td><%= item.geography.altitude %> <span>m</span></td>
                             <td><%= item.speed.horizontal %> <span>kph</span></td>
                             <td>
-
-                                <input id="theNumber" type="hidden" value="<%= item.flight.iataNumber %>" name="flightNum"> 
+                                <% if (item.flight.iataNumber) { %>
+                                    <input id="theNumber" type="hidden" value="<%= item.flight.iataNumber %>" name="flightNum"> 
+                                <% } else {%>
+                                    <input id="theNumber" type="hidden" value="<%= item.flight.icaoNumber %>" name="flightNum"> 
+                                <% } %>
                                 <input id="theLat" type="hidden"  value= "<%= item.geography.latitude %>" name="flightLat" >
                                 <input id="theLong" type="hidden"  value= "<%= item.geography.longitude %>" name="flightLong" >
                                 <input id="theAlti" type="hidden"  value= "<%= item.geography.altitude %>" name="flightAlti" >
